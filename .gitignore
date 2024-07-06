@@ -1,4 +1,4 @@
 ./images/*
+./__pycache__
 ./.mypy_cache
-./*.png
 ./output.txt
