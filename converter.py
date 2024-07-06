@@ -1,15 +1,14 @@
 from PIL import Image
 from math import floor
 
-def image_to_ascii():
+def convert(file_path: str, size: int):
   output: str = ""
-  fname: str = "a"
 
 
   # TODO: handle the possibility of file not existing
-  i = Image.open(f"./images/{fname}.png")
+  i = Image.open(file_path)
 
-  width, height = (100, 100)
+  width, height = (size, size)
 
   i.thumbnail((width, height))
 
@@ -33,8 +32,6 @@ def image_to_ascii():
     if (index + 1 )% width == 0:
       output += "\n"
 
-
-  i.save(f"./{fname}.png")
 
   with open("output.txt", "w") as f:
     f.write(output)
