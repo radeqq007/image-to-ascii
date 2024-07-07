@@ -10,12 +10,17 @@ window.title("Image to ASCII")
 window.geometry("500x600")
 window.configure(pady=10)
 
-file_name = tk.Variable()
+file_name = tk.StringVar()
 file_path: str = ""
 output_size: int = 100
 
+error_message = tk.StringVar()
 
-# updates file_path and file_name
+def image_to_ascii():
+    global error_message
+    error_message.set(convert(file_path, output_size))
+
+# asks for new file and pdates file_path and file_name
 def open_file():
   global file_path
   file_path = filedialog.askopenfilename()
@@ -50,7 +55,7 @@ selected_file_frame.pack(fill='x', padx=10, pady=10)
 selected_file_label = tk.Label(
   master = selected_file_frame,
   text = "Selected file: ",
-  font = "halvetica 10 bold",
+  font = "Helvetica 10 bold",
 )
 selected_file_label.pack(side="left")
 
@@ -59,7 +64,7 @@ selected_file_label.pack(side="left")
 selected_file = tk.Label(
   master = selected_file_frame,
   textvariable = file_name,
-  font = "halvetica 8",
+  font = "Helvetica 8",
 
 )
 selected_file.pack(side="right")
@@ -73,7 +78,7 @@ select_size_frame.pack(fill='x', padx=10, pady=10)
 select_size_label = tk.Label(
   master = select_size_frame,
   text = "Size: ",
-  font = "halvetica 10 bold",
+  font = "Helvetica 10 bold",
 )
 select_size_label.pack(side="left")
 
@@ -81,7 +86,7 @@ select_size = tk.Entry(
   master = select_size_frame,
   width = 35,
 )
-select_size.pack()
+select_size.pack(side="left")
 
 select_size.bind("<Return>", update_size) # when input changes
 select_size.bind("<FocusOut>", update_size) # when user clicks away
@@ -92,10 +97,18 @@ convert_button = tk.Button(
   master = window,
   text = "Convert",
   width = 30,
-  command = lambda: convert(file_path, output_size),
+  command = image_to_ascii,
 )
 convert_button.pack()
 
+error = tk.Label(
+    master = window,
+    fg = "red",
+    font = "Helvetica 10",
+    pady = 20,
+    textvariable = error_message
+)
+error.pack()
 
 
 

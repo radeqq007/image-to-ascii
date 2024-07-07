@@ -1,11 +1,21 @@
 from PIL import Image
 from math import floor
+from os import path
 
-def convert(file_path: str, size: int):
+def convert(file_path: str, size: int = 0) -> str:
+  if file_path == "":
+    return "Select correct file."
+  
+  if size <= 0:
+    return "Please select correct size."
+  
+  if not path.exists(file_path):
+    return "File doesn't exist." 
+  
+  
   output: str = ""
 
 
-  # TODO: handle the possibility of file not existing
   i = Image.open(file_path)
 
   width, height = (size, size)
@@ -35,3 +45,5 @@ def convert(file_path: str, size: int):
 
   with open("output.txt", "w") as f:
     f.write(output)
+
+  return ""
