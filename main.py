@@ -7,14 +7,14 @@ def main():
   # window
   window = tk.Tk()
   window.title("Image to ASCII")
-  window.geometry("500x600")
+  window.geometry("650x400")
   window.configure(pady=10)
 
   file_name = tk.StringVar()
   file_path: str = ""
   output_size: int = 100
 
-  output_path = tk.StringVar(value="./")
+  output_path = tk.StringVar(value=os.getcwd())
 
   error_message = tk.StringVar()
 
