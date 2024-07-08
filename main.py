@@ -110,7 +110,8 @@ def main():
 
   # frame to display current file
   selected_output_path_frame = tk.Frame(
-    master=window
+    master=window,
+    pady = 40
   )
   selected_output_path_frame.pack(fill='x', padx=10, pady=10)
 
@@ -122,13 +123,13 @@ def main():
   selected_output_path_label.pack(side="left")
 
 
-  selected_output_path= tk.Label(
+  selected_output_path = tk.Label(
     master = selected_output_path_frame,
     textvariable = output_path,
     font = "Helvetica 8",
 
   )
-  select_output_path.pack(side="right")
+  selected_output_path.pack(side="right")
 
 
   convert_button = tk.Button(
