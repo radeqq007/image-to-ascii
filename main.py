@@ -14,18 +14,21 @@ def main():
   file_path: str = ""
   output_size: int = 100
 
-  output_path= tk.StringVar(value="./")
+  output_path = tk.StringVar(value="./")
 
   error_message = tk.StringVar()
 
   def image_to_ascii():
+      update_size()
+
       error_message.set(convert(file_path, output_size, output_path.get()))
 
   # asks for new file and pdates file_path and file_name
   def open_file():
-    global file_path
+    nonlocal file_path
     file_path = filedialog.askopenfilename()
     file_name.set(os.path.basename(file_path))
+
 
 
   def new_output_path():
@@ -34,7 +37,7 @@ def main():
 
   # used for updating the size when the input changes
   def update_size(event = None):
-      global output_size
+      nonlocal output_size
       new_size = select_size.get()
       try:
           output_size = int(new_size)
@@ -93,9 +96,6 @@ def main():
     width = 35,
   )
   select_size.pack(side="left")
-
-  select_size.bind("<Return>", update_size) # when input changes
-  select_size.bind("<FocusOut>", update_size) # when user clicks away
 
 
   # button that opens the file dialog
