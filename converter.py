@@ -2,7 +2,7 @@ from PIL import Image
 from math import floor
 from os import path
 
-def convert(file_path: str, size: int = 0) -> str:
+def convert(file_path: str, size: int = 0, output_path: str = "./") -> str:
   if file_path == "":
     return "Select correct file."
   
@@ -29,7 +29,7 @@ def convert(file_path: str, size: int = 0) -> str:
 
   # TODO: add more characters because this is stupid
   # characters, from lightest to darkest
-  chars = ".,:;ox%#@"
+  chars = " .:-=+*#%@&"
 
   # this sucks
   for index, pixel in enumerate(data):
@@ -43,7 +43,7 @@ def convert(file_path: str, size: int = 0) -> str:
       output += "\n"
 
 
-  with open("output.txt", "w") as f:
+  with open(f"{output_path}output.txt", "w") as f:
     f.write(output)
 
   return ""
