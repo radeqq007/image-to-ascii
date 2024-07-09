@@ -35,7 +35,6 @@ def main():
     output_path.set(filedialog.askdirectory())
 
 
-  # used for updating the size when the input changes
   def update_size(event = None):
       nonlocal output_size
       new_size = select_size.get()

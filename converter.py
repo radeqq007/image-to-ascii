@@ -29,18 +29,13 @@ def convert(file_path: str, size: int = 0, output_path: str = "./") -> str:
 
   data = i.getdata()
 
-  # TODO: add more characters because this is stupid
   # characters, from lightest to darkest
   chars = " .:-=+*#%@&"
 
-  # this sucks
   for index, pixel in enumerate(data):
-    #print(f"index: {index}, pixel: {pixel} data[pixel]: {data[pixel]} / 10", end="   ")
     brightness_index = floor(pixel / 256 * (len(chars) - 1))
-    #print(f"Brightness: {brightness_index}")
     output += chars[brightness_index] + " "
 
-    # Not sure if this is working or not
     if (index + 1 )% width == 0:
       output += "\n"
 
