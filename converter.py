@@ -3,8 +3,6 @@ from math import floor
 from os import path
 
 def convert(file_path: str, size: int = 0, output_path: str = "./") -> str:
-  print(f"File: {file_path}, size: {size}, output: {output_path}")
-
   if file_path == "":
     return "Select correct file."
   

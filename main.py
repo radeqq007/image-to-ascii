@@ -41,8 +41,7 @@ def main():
       try:
           output_size = int(new_size)
       except ValueError:
-          # TODO: handle this
-          ...
+          error_message.set("Please enter correct size.")
 
   # button that opens the file dialog
   select_file = tk.Button(
