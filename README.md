@@ -11,11 +11,19 @@ A simple GUI application that converts an image to ASCII art.
 ## Installation
 
 1. Clone the repository:
-   `git clone https://github.com/yourusername/image-to-ascii.git`
-   `cd image-to-ascii`
+
+   ```
+   git clone https://github.com/yourusername/image-to-ascii.git
+   cd image-to-ascii
+   ```
 
 2. Install the required Python packages:
-   `pip install -r requirements.txt`
+
+   ```
+   pip install -r requirements.txt
+   ```
 
 3. Run the application:
-   `python main.py`
+   ```
+   python main.py
+   ```
