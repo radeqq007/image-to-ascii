@@ -15,9 +15,11 @@ def convert(file_path: str, size: int = 0, output_path: str = "./") -> str:
   
   output: str = ""
 
-
-  i = Image.open(file_path)
-
+  try:
+    i = Image.open(file_path)
+  except OSError:
+    return "Please select correct file."
+  
   width, height = (size, size)
 
   i.thumbnail((width, height))
