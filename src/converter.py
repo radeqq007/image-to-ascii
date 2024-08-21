@@ -25,15 +25,14 @@ def convert(file_path: str, size: int = 0, output_path: str = "./") -> str:
   i.thumbnail((width, height))
 
   i.thumbnail((width, height))
-  i = i.convert("L")
 
   data = i.getdata()
 
-  # characters, from lightest to darkest
-  chars = " .:-=+*#%@&"
+  # characters, from darkest to lightest
+  chars = "&@%#*+=-:. "
 
   for index, pixel in enumerate(data):
-    brightness_index = floor(pixel / 256 * (len(chars) - 1))
+    brightness_index = floor(((pixel[0] + pixel[1] + pixel[2]) / 3) / 256 * (len(chars) - 1))
     output += chars[brightness_index] + " "
 
     if (index + 1 )% width == 0:
