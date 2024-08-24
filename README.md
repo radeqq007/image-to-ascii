@@ -5,7 +5,8 @@ A simple GUI application that converts an image to ASCII art.
 ## Features
 
 - Load image from your computer.
-- Specify the output size.
+- Specify the output size.<br/>
+  _Note: sizes >~750 might not work_
 - Save the ASCII art to a specified directory.
 
 ## Installation
