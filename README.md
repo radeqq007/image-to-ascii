@@ -14,7 +14,7 @@ A simple GUI application that converts an image to ASCII art.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/image-to-ascii.git
+   git clone https://github.com/radeqq007/image-to-ascii.git
    cd image-to-ascii
    ```
 
