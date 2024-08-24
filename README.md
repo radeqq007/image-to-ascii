@@ -26,5 +26,5 @@ A simple GUI application that converts an image to ASCII art.
 
 3. Run the application:
    ```
-   python main.py
+   python ./src/main.py
    ```
