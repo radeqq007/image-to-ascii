@@ -5,7 +5,8 @@ A simple GUI application that converts an image to ASCII art.
 ## Features
 
 - Load image from your computer.
-- Specify the output size.
+- Specify the output size.<br/>
+  _Note: sizes >~750 might not work_
 - Save the ASCII art to a specified directory.
 
 ## Installation
@@ -13,7 +14,7 @@ A simple GUI application that converts an image to ASCII art.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/image-to-ascii.git
+   git clone https://github.com/radeqq007/image-to-ascii.git
    cd image-to-ascii
    ```
 
@@ -25,5 +26,5 @@ A simple GUI application that converts an image to ASCII art.
 
 3. Run the application:
    ```
-   python main.py
+   python ./src/main.py
    ```
