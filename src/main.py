@@ -23,7 +23,7 @@ def main():
 
       error_message.set(convert(file_path, output_size, output_path.get()))
 
-  # asks for new file and pdates file_path and file_name
+  # asks for new file and updates file_path and file_name
   def open_file():
     nonlocal file_path
     file_path = filedialog.askopenfilename()
